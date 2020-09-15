@@ -1,4 +1,5 @@
 import json
+import os
 from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
@@ -45,4 +46,4 @@ def careers():
     return render_template("careers.html",page_title="Careers")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host=os.environ.get("IP", "0.0.0.0"))
